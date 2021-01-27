@@ -1,24 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import pizzaBanner from "./assets/pizzaBanner.jpg";
+import "./App.css";
+import CuisineCard from "./components/cuisineCard";
+import cuisines from "./data/cuisines";
 
 function App() {
+  console.log(cuisines);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CuisineCard
+      title={cuisines[0].name}
+      backgroundImage={cuisines[0].background}
+    />
   );
 }
 
