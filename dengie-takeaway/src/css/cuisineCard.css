@@ -1,6 +1,6 @@
 .CuisineCard {
-  width: 80%;
-  height: 200px;
+  width: 100%;
+  height: 160px;
   margin: auto;
   display: flex;
   flex-direction: row;
@@ -19,8 +19,8 @@
 }
 
 .bg {
-  width: 80%;
-  height: 200px;
+  width: 60%;
+  height: 160px;
   position: absolute;
   opacity: 50%;
   background-size: cover;
@@ -28,8 +28,8 @@
 }
 
 .tint {
-  width: 80%;
-  height: 200px;
+  width: 60%;
+  height: 160px;
   position: absolute;
   background-color: black;
   opacity: 50%;
