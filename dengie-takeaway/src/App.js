@@ -1,16 +1,28 @@
-import pizzaBanner from "./assets/pizzaBanner.jpg";
 import "./App.css";
-import CuisineCard from "./components/cuisineCard";
-import cuisines from "./data/cuisines";
-import CuisineList from "./components/cuisineList";
+import { restaurants, menus } from "./data/cuisines";
+import Navbar from "./components/common/Navbar";
+import Menu from "./components/menu/Menu";
+import CuisineList from "./components/homePage/cuisineList";
+
+import { Route, Switch } from "react-router-dom";
 
 function App() {
   return (
-    <CuisineList cuisines={cuisines} />
-    // <CuisineCard
-    //   title={cuisines[0].name}
-    //   backgroundImage={cuisines[0].background}
-    // />
+    <>
+      <Navbar />
+      <Switch>
+        <Route
+          path="/menu/:name"
+          render={(props) => (
+            <Menu menu={menus[props.match.params.name]} {...props} />
+          )}
+        />
+
+        <Route path="/">
+          <CuisineList cuisines={restaurants} />
+        </Route>
+      </Switch>
+    </>
   );
 }
 
